@@ -1,4 +1,7 @@
 console.log('Aula de Compilador...');
+// Compilador é responsável pelo gerenciamento do typescript para javascript
+// e de fazer a tradução para o browser.
+
 // é necessário alterar o tsconfig para definir algumas configurações
 //"noEmitOnError": true para não emitir js no caso de erro.
 
