@@ -116,3 +116,74 @@ const [motor, ano] = caracteristica
 console.log(motor);
 console.log(ano);
 
+const item = {
+    nome: "Hyper X mouse",
+    preco: 150,
+    caracteristica: {
+        w: 'Importado Made Brazil'
+    }
+}
+
+//Acessando a partir de um Objeto Destructuring
+const nomeItem = item.nome
+const precoItem = item.preco
+const caracteristicaItem = item.caracteristica.w
+console.log(nomeItem);
+console.log(precoItem);
+console.log(caracteristica);
+
+
+const { nome: n, preco: p, caracteristica: c } = item
+console.log(n);
+console.log(p);
+console.log(c);
+
+//Template String:
+//Antes
+const usuarioID: string = 'SuporteCod3r'
+const notificacoes: string = '9'
+const boasVindas = 'Boas Vindas ' + usuarioID +
+'Notificacaçoes: ' + notificacoes
+console.log(boasVindas);
+
+//Template String: é uma forma mais simples concatenar textos e valores
+const boasVindasTemplateString = `
+        Boas vindas ${usuarioID},
+        Notificações: ${parseInt(notificacoes) > 9 ? '+9' : notificacoes}
+`
+console.log(boasVindasTemplateString);
+console.log(`${(2000 - 200) * 3}`);
+
+//Promises: é uma promessa algo que vai chegar no futuro que trabalha com sincronismo.
+//OBS: a vantangem que nós conseguimos encadear de uma forma mais tranquila as chamadas.
+//Callback
+function esperar3s(callback: (dado: string) => void) {
+    setTimeout(() =>{
+        callback('3s depois...')                
+    }, 3000)
+}
+
+esperar3s(function(resultado: string) {
+    console.log(resultado);    
+})
+
+function esperar3sPromise() {
+    return new Promise((resolve: any) =>{
+        setTimeout(() =>{
+            resolve('3s depois...')                
+        }, 3000)
+    })    
+}
+
+esperar3sPromise()
+    .then(dado => console.log(dado))
+
+fetch('https://swapi.dev/api/people/1')
+    .then(res => res.json())
+    .then(personagem => personagem.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(filme => console.log(filme.title))
+    .catch(err => console.log('Error com o Catch...' + err))    
+
+
