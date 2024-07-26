@@ -1,3 +1,4 @@
+console.log("LET:");
 //LET : é uma variável que pode ser alterado o seu valor.
 //OBS: também tem o escopo de bloco
 
@@ -11,7 +12,8 @@ if(estaFrio){
    let acao = 'Colocar o casaco...'
    console.log(acao);
 }
-
+console.log();
+console.log("CONST");
 //CONST: é uma variável que não podemos alterar o valor dela.
 //OBS: também tem o escopo de bloco
 
@@ -30,7 +32,9 @@ console.log(segredo);
 for (var i = 0; i < 10; i++) {
     console.log(i);        
 }
+console.log();
 
+console.log("Arrow Function:");
 //Arrow Function: é uma função objetivo dela é ter uma sintax mais reduzida
 const somar = function(n1: number, n2: number): number{
     return n1 + n2;
@@ -45,7 +49,9 @@ saudacao()
 
 const falarCom = (pessoa: string) => console.log('Oi... ' + pessoa);
 falarCom('Nathália')
+console.log();
 
+console.log("this:");
 //this
 function normalComThis(this: any) {
     console.log(this);
@@ -59,7 +65,9 @@ normalComThisEspecial()
 
 //const arrowComThis = () => console.log(this);
 //arrowComThis()
+console.log();
 
+console.log("Parâmetros Padrão:");
 //Parâmetros Padrão: ser caso você não definir o valor padrão
 function contagemRegressiva(inicio: number = 3,
     fim: number = inicio - 5): void {
@@ -74,7 +82,9 @@ function contagemRegressiva(inicio: number = 3,
     
 }
 contagemRegressiva(3)
+console.log();
 
+console.log("Spread:");
 //Rest & Spread
 
 //... Spread é para espalhar 
@@ -85,7 +95,9 @@ const turmaA: string[] = ['João', 'Maria', 'Fernanda']
 const turmaB: string[] = 
       ['Jojo', 'Joice', 'Megan', ...turmaA]
 console.log(turmaB);
+console.log();
 
+console.log("Rest:");
 //Rest é para juntar
 function retornarArray(...args: number[]): number[] {        
     return args
@@ -93,7 +105,9 @@ function retornarArray(...args: number[]): number[] {
 
 const numeros = retornarArray(10, 20, 30, 50)
 console.log(numeros);
+console.log();
 
+console.log("Tupla:");
 const tupla: [number, string, boolean] = [1, 'abc', false]
 
 function tuplaParam1(a: number, b: string, c: boolean): void {
@@ -108,7 +122,9 @@ function tuplaParam2(...params: [number, string, boolean]) {
 }
 
 tuplaParam2(...tupla)
+console.log();
 
+console.log("Destructuring:");
 //Destructuring (array)
 const caracteristica = ['Motor Zetec 1.8', 2020]
 
@@ -123,7 +139,9 @@ const item = {
         w: 'Importado Made Brazil'
     }
 }
+console.log();
 
+console.log("Objeto Destructuring:");
 //Acessando a partir de um Objeto Destructuring
 const nomeItem = item.nome
 const precoItem = item.preco
@@ -137,7 +155,9 @@ const { nome: n, preco: p, caracteristica: c } = item
 console.log(n);
 console.log(p);
 console.log(c);
+console.log();
 
+console.log("Template String:");
 //Template String:
 //Antes
 const usuarioID: string = 'SuporteCod3r'
@@ -153,7 +173,9 @@ const boasVindasTemplateString = `
 `
 console.log(boasVindasTemplateString);
 console.log(`${(2000 - 200) * 3}`);
+console.log();
 
+console.log("Promises:");
 //Promises: é uma promessa algo que vai chegar no futuro que trabalha com sincronismo.
 //OBS: a vantangem que nós conseguimos encadear de uma forma mais tranquila as chamadas.
 //Callback

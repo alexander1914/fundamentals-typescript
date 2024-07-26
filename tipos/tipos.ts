@@ -1,6 +1,5 @@
 // TypeScript é uma linguagem de tipos dinâmicos
 
-
 // string
 let nome: string = 'Alexander'
 console.log(nome)
