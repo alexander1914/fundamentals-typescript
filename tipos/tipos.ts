@@ -1,17 +1,26 @@
 // TypeScript é uma linguagem de tipos dinâmicos
 
+console.log("String");
 // string
 let nome: string = 'Alexander'
 console.log(nome)
+console.log();
 
+console.log("Number");
 //number
 let idade: number = 33
 console.log(idade)
+console.log();
 
+
+console.log("Boolean");
 //boolean
 let temFaculdade: boolean = true
 console.log(temFaculdade)
+console.log();
 
+
+console.log("Tipos explícidos");
 //Tipos explícidos é quando declaramos um variável sem nenhum tipo 
 let minhaIdade
 console.log(typeof minhaIdade)
@@ -19,6 +28,7 @@ console.log(typeof minhaIdade)
 minhaIdade = 'Agora é 34 anos'
 console.log(minhaIdade);
 
+console.log("Array");
 //array
 let hobbies: any[] = ["Futebol", "Coding", "Video Games"]
 console.log(hobbies[0]);
@@ -26,11 +36,16 @@ console.log(typeof hobbies);
 
 hobbies = [99, 20, 21]
 console.log(hobbies);
+console.log();
 
+
+console.log("Tuplas");
 //Tuplas é um array de tipos pré quantidades definidas de tipos
 let endereco: [string, number, number] = ["Av Paulista", 1000, 0]
 console.log(endereco);
+console.log();
 
+console.log("Enum");
 //enums
 enum CorPalmeiras{
     Verde,
@@ -41,6 +56,7 @@ enum CorPalmeiras{
 let cor: CorPalmeiras = CorPalmeiras.Verde
 console.log('Minha cor é: ' + cor);
 
+console.log("Any");
 //any é permite nós mudar o tipo para qualquer outro tipo
 let carro: any = 'BMW'
 console.log(carro);
@@ -50,7 +66,9 @@ carro = {
     ano: 2024
 }
 console.log(carro);
+console.log();
 
+console.log("Function");
 //function podemos explícidas com seu tipo e sem retorno
 function escreveNome(): string {
     return nome
@@ -70,7 +88,9 @@ function meuDizimo(salario: number): number{
 }
 
 console.log(meuDizimo(820));
+console.log();
 
+console.log("Objeto tipo any");
 //Objeto do tipo any
 
 let usuario ={
@@ -79,6 +99,7 @@ let usuario ={
 }
 
 console.log(usuario);
+console.log();
 
 //Objeto com seus determinados tipos
 
@@ -109,6 +130,7 @@ console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
 
+console.log("Type");
 //Type é possível criar um tipo para seu objeto
 type Funcionario = {
     supervisores: string [],
@@ -125,7 +147,9 @@ let funcionario2 : Funcionario = {
         }
     },
 }
+console.log();
 
+console.log("Union");
 //Union Types com este simbolo | é possível unir 2 tipos diferentes
 let nota: number | string = 10
 console.log(`Minha nota é ${nota} !`);
@@ -139,7 +163,10 @@ if(typeof valor === "number"){
 }else{
     console.log(typeof valor);    
 }
+console.log();
 
+
+console.log("Never");
 //Never é quando vai terminar com erro
 function falha(msg:string): never {
     throw new Error(msg)
