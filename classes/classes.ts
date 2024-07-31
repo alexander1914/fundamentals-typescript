@@ -49,3 +49,45 @@ class Produto{
 
 const produto1 = new Produto("teclado hyper x", 250.50, 10.0)
 console.log(`Produto: ${produto1.resumo()}`);
+console.log();
+
+console.log("Modificadores de acesso..");
+
+class Carro {
+    private velocidadeAtual: number = 0
+
+    constructor (public marca: string, public modelo: string,
+        private velocidadeMaxima: number = 200){            
+        }
+
+        private alterarVelocidade(delta: number): number {
+            const novaVelociodade = this.velocidadeAtual + delta
+            const velocidadeValida = novaVelociodade >= 0
+            && novaVelociodade <= this.velocidadeMaxima
+            
+            if(velocidadeValida){
+                this.velocidadeAtual = novaVelociodade
+            }else{
+                this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0
+            }
+
+            return this.velocidadeAtual
+        }
+
+        public acelerar(): number {
+            return this.alterarVelocidade(5)
+        }
+
+        public frear(): number {
+            return this.alterarVelocidade(-5)
+        }
+    }
+
+    const carro1 = new Carro('Ford', 'Ka', 185)
+    Array(50).fill(0).forEach(() => carro1.acelerar())
+    console.log(carro1.acelerar());
+    
+    Array(30).fill(0).forEach(() => carro1.frear())
+    console.log(carro1.frear());
+    
+    
