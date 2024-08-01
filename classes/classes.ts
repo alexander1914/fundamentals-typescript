@@ -51,7 +51,7 @@ const produto1 = new Produto("teclado hyper x", 250.50, 10.0)
 console.log(`Produto: ${produto1.resumo()}`);
 console.log();
 
-console.log("Modificadores de acesso..");
+console.log("Modificadores de acesso");
 
 class Carro {
     private velocidadeAtual: number = 0
@@ -60,7 +60,7 @@ class Carro {
         private velocidadeMaxima: number = 200){            
         }
 
-        private alterarVelocidade(delta: number): number {
+        protected alterarVelocidade(delta: number): number {
             const novaVelociodade = this.velocidadeAtual + delta
             const velocidadeValida = novaVelociodade >= 0
             && novaVelociodade <= this.velocidadeMaxima
@@ -83,11 +83,63 @@ class Carro {
         }
     }
 
-    const carro1 = new Carro('Ford', 'Ka', 185)
-    Array(50).fill(0).forEach(() => carro1.acelerar())
-    console.log(carro1.acelerar());
+const carro1 = new Carro('Ford', 'Ka', 185)
+Array(50).fill(0).forEach(() => carro1.acelerar())
+console.log(carro1.acelerar());
     
-    Array(30).fill(0).forEach(() => carro1.frear())
-    console.log(carro1.frear());
+Array(30).fill(0).forEach(() => carro1.frear())
+console.log(carro1.frear());
+console.log();
+        
+console.log("Herança");
+//Herança: é o conceito de herda os atributos e metodos de uma outra classe(pai)
+// e sobreescrever os metodos personalizado.
+
+class Ferrari extends Carro {
+    constructor(modelo: string, velocidadeMaxima: number){
+            //super: é para que o construtor da classe pai seja execultado
+            super('Ferrari', modelo, velocidadeMaxima)
+        }
+    public acelerar(): number {
+            return this.alterarVelocidade(20)
+    }
+    public frear(): number {
+            return this.alterarVelocidade(-15)
+    }
+}
+
+const f40 = new Ferrari('F40', 324)
+console.log(`${f40.marca} e ${f40.modelo}`);
+console.log(f40.acelerar());
+console.log(f40.frear());
+console.log();
+    
+console.log("Getters e Setters");
+class Pessoa {
+    private _idade: number = 0
+
+    get idade(): number{
+        return this._idade
+    }
+    
+    public set idade(valor : number) {
+        if(valor >= 0 && valor <= 120){
+            this._idade = valor;
+        }        
+    }    
+}
+
+const pessoa1 = new Pessoa
+pessoa1.idade = 34
+console.log(pessoa1);
+
+pessoa1.idade = -1
+console.log("Testando o set um valor inválido" + pessoa1.idade);
+
+
+    
+    
+    
+    
     
     
