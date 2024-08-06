@@ -186,6 +186,37 @@ console.log(c1.getResultado());
 let c2 = new Multiplicacao()
 c2.executar(2, 3, 4, 5)
 console.log(c2.getResultado());
+console.log();
+
+console.log("Singleton");
+//Singleton: é usado quando queremos ter uma única instância
+class Unico {
+    private static instance: Unico = new Unico    
+    private constructor() {}
+    
+    static getInstance(): Unico {
+        return Unico.instance
+    }
+
+    agora(){
+        return new Date
+    }
+}
+console.log(Unico.getInstance().agora());
+console.log();
+
+//Somente Leitura
+console.log("Somente Leitura");
+class Aviao {
+    public readonly modelo: string
+    constructor(modelo: string, public readonly prefixo: string) {
+        this.modelo = modelo
+    }
+}
+const turboHelice = new Aviao('Tu-114', 'PT-ABC')
+//turboHelice.modelo = 'DC-8'
+//turboHelice.prefixo = 'PT-DEF'
+console.log(turboHelice);
 
 
 
