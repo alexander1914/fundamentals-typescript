@@ -97,3 +97,16 @@ node_modules/undici-types/retry-handler.d.ts
 node_modules/undici-types/util.d.ts
 node_modules/undici-types/webidl.d.ts
 node_modules/undici-types/websocket.d.ts
+node_modules/@types/jquery/index.d.ts
+node_modules/@types/jquery/JQuery.d.ts
+node_modules/@types/jquery/JQueryStatic.d.ts
+node_modules/@types/jquery/legacy.d.ts
+node_modules/@types/jquery/LICENSE
+node_modules/@types/jquery/misc.d.ts
+node_modules/@types/jquery/package.json
+node_modules/@types/jquery/README.md
+node_modules/@types/jquery/dist/jquery.slim.d.ts
+node_modules/@types/sizzle/index.d.ts
+node_modules/@types/sizzle/LICENSE
+node_modules/@types/sizzle/package.json
+node_modules/@types/sizzle/README.md
