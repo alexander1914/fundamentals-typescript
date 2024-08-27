@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContadorValor from '../componentes/ContadorValor.tsx'
+import logRender from '../decorators/logRender.ts'
 
 interface ContadorProps {
     valorInicial?: number
@@ -9,6 +10,7 @@ interface ContadorState {
     valor: number
 }
 
+@logRender
 export default class Contador
     extends Component<ContadorProps, ContadorState> {
     
