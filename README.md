@@ -1,5 +1,5 @@
 # fundamentals-typescript
-At this moment, I am learning more fundamentals about TypeScript
+At this moment, I am learning more fundamentals about TypeScript and doing some integration.
 
 # Promises: 
 é uma promessa algo que vai chegar no futuro que trabalha com sincronismo.
